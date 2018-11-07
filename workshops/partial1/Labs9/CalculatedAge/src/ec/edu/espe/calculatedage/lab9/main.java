@@ -7,17 +7,16 @@ package ec.edu.espe.calculatedage.lab9;
 
 import java.util.Scanner;
 
-
 /**
  *
  * @author Carlos Villarreal
  */
 public class main {
-    private static int age;
-    private static int mes;
-    private static int day;
+   private static int age;
+   private static int mes;
+   private static int day;
    
-     public static void main(String[] args) {
+     public static void main(String[] args) { 
          Scanner prs = new Scanner(System.in);
          System.out.println("Ingrese año");  
          age=prs.nextInt();
@@ -25,8 +24,13 @@ public class main {
          mes=prs.nextInt();
          System.out.println("Ingrese dia"); 
          day=prs.nextInt();
-     
+         Persona person = new Persona();
+         person.Calculatedaño(age,mes,day);
          
+    
+       
      }
+
+    
     
 }
