@@ -12,30 +12,10 @@ import java.util.Scanner;
  * @author Carlos Villarreal
  */
 public class Operation {
-     private  int operand1;
-
-    public Operation(int operand1, int operand2, int result) {
-        this.operand1 = operand1;
-        this.operand2 = operand2;
-        this.result = result;
-    }
-     private int operand2;
      private int result;
 
-    public int getOperand1() {
-        return operand1;
-    }
-
-    public void setOperand1(int operand1) {
-        this.operand1 = operand1;
-    }
-
-    public int getOperand2() {
-        return operand2;
-    }
-
-    public void setOperand2(int operand2) {
-        this.operand2 = operand2;
+    public Operation() {
+        
     }
 
     public int getResult() {
@@ -46,17 +26,17 @@ public class Operation {
         this.result = result;
     }
  
-     public static int add(int op1,int op2){
+   public  int add(int op1,int op2){
       int result;
       result=op1+op2;     
       return result;
   }
-  public static int rest(int op1,int op2){
+  public  int rest(int op1,int op2){
       int result;
       result=add(op1,-op2);     
       return result;
   }
-   public static int mult(int op1,int op2){
+   public  int mult(int op1,int op2){
        int cont=1;
        int ade=0;
        int result;
@@ -90,7 +70,7 @@ public class Operation {
       return ade;
        }
   
-    public static int div(int op1,int op2){
+    public  int div(int op1,int op2){
       int result,cont=-1,add=0;
       int aup1=op1;
       int aup2=op1;
