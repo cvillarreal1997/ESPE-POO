@@ -6,31 +6,39 @@
 package ec.edu.espe.calculatedage.lab9;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Carlos Villarreal
  */
 public class main {
-   private static int age;
-   private static int mes;
-   private static int day;
-   
-     public static void main(String[] args) { 
-         Scanner prs = new Scanner(System.in);
-         System.out.println("Ingrese año");  
-         age=prs.nextInt();
-         System.out.println("Ingrese mes"); 
-         mes=prs.nextInt();
-         System.out.println("Ingrese dia"); 
-         day=prs.nextInt();
-         Persona person = new Persona();
-         person.Calculatedaño(age,mes,day);
-         
+   private static int birthage;
+   private static int birthmes;
+   private static int birthday;
+   private static int resp;
     
-       
-     }
+     public  static void main(String[] args) {
+        main a = new main();
+         a.Ejecutar();            
+    } 
 
-    
-    
+     
+     
+      public  void Ejecutar(){
+         do{
+         ScannerData();
+         resp=JOptionPane.showConfirmDialog(null,"Desea repetir el proceso");        
+         }while (resp==JOptionPane.OK_OPTION);  
+         JOptionPane.showMessageDialog(null, "Chaosss..");         
+         
+     }
+        public  void ScannerData(){
+         birthage=Integer.parseInt(JOptionPane.showInputDialog( "Decideme tu año "));  
+         birthmes=Integer.parseInt(JOptionPane.showInputDialog("Decidme tu mes"));
+         birthday=Integer.parseInt(JOptionPane.showInputDialog("Decidme tu dia"));
+         Persona person = new Persona();
+         person.Calculatedaño(birthage,birthmes,birthday);        
+         
+     }
 }
