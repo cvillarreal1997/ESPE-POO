@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.calculatedage.lab9;
 
+import java.io.IOException;
 import static java.lang.System.console;
 import java.util.Calendar;
 import java.util.Date;
@@ -22,7 +23,7 @@ public class Persona {
     }
    
     
-    public void  Calculatedaño (int age,int mes,int day ){
+    public String  Calculatedaño (String nameperson,int age,int mes,int day ) throws IOException{
         
         Calendar cal = new GregorianCalendar();
         Operation calculo= new Operation();
@@ -54,6 +55,12 @@ public class Persona {
         if(rday<0){
             rday=rday+31; 
     }
+        if(meslly==mes){
+            rmonth=0;
+            
+            
+        }
+        
     if(rage<0 |rmonth<0|rday<0 && age==ageactually){
           JOptionPane.showMessageDialog(null,"Usted auno nace");
           Pregunta();
@@ -67,11 +74,12 @@ public class Persona {
             
         }
         
-        JOptionPane.showMessageDialog(null,"AJA Tu tienes  "+rage+" años  "+rmonth+" meses y "+rday+" dias de vida");
-        
+        JOptionPane.showMessageDialog(null,nameperson+" tu tienes "+rage+" años "+rmonth+" meses y "+rday+" dias de vida");
+        String datas=nameperson+";"+age+";"+mes+";"+day+";"+rage;
+       return datas;
         
     }
-     public void Pregunta(){
+     public void Pregunta() throws IOException{
     do{
          resp1=JOptionPane.showConfirmDialog(null,"Desea repetir el proceso"); 
          repetir.Ejecutar();
@@ -79,6 +87,7 @@ public class Persona {
          JOptionPane.showMessageDialog(null, "Chaosss..");         
          
      }
+    
    
      
 

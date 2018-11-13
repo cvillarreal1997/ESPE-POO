@@ -7,29 +7,32 @@ package ec.espe.edu.file_management.utils;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Carlos Villarreal
  */
 public class Archivos {
-    void WriteFile(File fFichero,String cadena)
-    {
+    String search;
+   
+    public void WriteFile(File fFichero,String cadena){
         BufferedWriter bw;
         try
         {
          if(!fFichero.exists())
          {
              fFichero.createNewFile();
+             
          }
-
-           // Luego de haber creado el archivo procedemos a escribir dentro de el.
             bw = new BufferedWriter(new FileWriter(fFichero,true));
             bw.write(cadena);
+            bw.newLine();
             bw.close();
 
         }catch(Exception e)
@@ -38,9 +41,21 @@ public class Archivos {
         }
 
     }
+     public void ReadFile(String rut) throws FileNotFoundException,IOException {
+        String cadena;
+        String acumulador="";
+        FileReader Ficheroread= new FileReader(rut);
+        BufferedReader br = new BufferedReader(Ficheroread);
+        while((cadena=br.readLine())!=null){
+            acumulador = (acumulador +cadena)+"\n";
+        }
+         JOptionPane.showMessageDialog(null,"    REGISTRO DE EDADES (AA/MM/DD)\n"+acumulador);
+        br.close();     
+            
+            }
 
 
-    void DeleteFile (File Ffichero)
+    public void DeleteFile (File Ffichero)
     {
         try
         {
@@ -55,63 +70,50 @@ public class Archivos {
             System.out.println(e);
         }
     }
-   
     
-   /* void modificar(File fAntiguo,String aCadena,String nCadena)    {
-       
-        Random numaleatorio = new Random(3816L);
-        String nFnuevo = fAntiguo.getParent()+"/auxiliar"+String.valueOf(Math.abs(numaleatorio.nextInt()))+".txt";
-
-     
-        File fNuevo= new File(nFnuevo);
-        // Declaro un nuevo buffer de lectura
-        BufferedReader br;
-        try
-        {
-
-            if(fAntiguo.exists())
-            {
-                br = new BufferedReader(new FileReader(fAntiguo));
-
-                String linea;
-
-                while((linea=br.readLine()) != null)
-                {
-                    if(linea.equals(aCadena))
-                    {
-                        Escribir(fNuevo,nCadena);
-
-                    }
-                    else
-                    {
-                        Escribir(fNuevo,linea);
-                    }
-                }
-
-              // Cierro el buffer de lectura
-                br.close();
-                String nAntiguo = fAntiguo.getName();
-                borrar(fAntiguo);
-                fNuevo.renameTo(fAntiguo);
-
-
-
-
-            }
-            else
-            {
-                System.out.println("Fichero no Existe");
-            }
-
-        }catch(Exception e)
-        {
-            System.out.println(e);
+    public String SearchDatas ( String ruta, String wordsearch)throws FileNotFoundException,IOException{
+        FileReader fileold =new FileReader(ruta);
+        String cad="";
+        String cadena;
+        BufferedReader br1 = new BufferedReader(fileold);
+            while((cadena = br1.readLine())!= null) {
+      if(cadena.indexOf(";")!= -1){
+        if (cadena.split(";")[0].equalsIgnoreCase(wordsearch)) {
+           JOptionPane.showMessageDialog(null,"Registro encontrado \n"+ cadena);
+            cad=cadena;     
+           
         }
-    }*/
-
-
-      }
+    }
+}
+        br1.close();         
+          return cad;    
+        }       
     
-
-
-
+    
+    
+    public void ModificationDatas(String wordsearch,String ruta,String ruta1,int a,String newword)throws IOException{
+         String oldworld="";
+         String copy;
+         FileReader fileold=new FileReader(ruta);
+         File filenew=new File(ruta1);
+         oldworld=SearchDatas(ruta,wordsearch);
+         BufferedReader br1= new BufferedReader(fileold);
+         BufferedWriter bw1= new BufferedWriter(new FileWriter(filenew,true));
+         while((oldworld=br1.readLine())!=null){
+            if(oldworld.indexOf(";")!=-1){
+                copy=oldworld.split(";")[a];
+                copy=newword;               
+            }
+           // WriteFile();
+            
+        }
+        
+        
+        
+        
+    }
+         
+   
+     }
+    
+    

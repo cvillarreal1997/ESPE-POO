@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.calculatedage.lab9;
+package ec.edu.espe.array_labs11;
 
 import java.util.Scanner;
 
