@@ -31,7 +31,7 @@ public class main {
   
     
      public  static void main(String[] args) throws IOException {
-         a.menu();
+         //a.menu();
                             
          }    
      
@@ -81,12 +81,12 @@ public class main {
          
      }
         public  void ScannerData(){
-         nameperson=(JOptionPane.showInputDialog( "Ingrese el nombre "));
-         birthage=Integer.parseInt(JOptionPane.showInputDialog( "Ingrese el  año ")); 
+         //nameperson=(JOptionPane.showInputDialog( "Ingrese el nombre "));
+         //birthage=Integer.parseInt(JOptionPane.showInputDialog( "Ingrese el  año ")); 
               
 
-         birthmes=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el mes"));
-         birthday=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dia"));
+         //=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el mes"));
+        // birthday=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dia"));
          Daate person = new Daate();
          
         

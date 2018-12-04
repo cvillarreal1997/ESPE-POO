@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +6,8 @@
  */
 package ec.edu.espe.calculatedage.lab9;
 
+import static com.oracle.nio.BufferSecrets.instance;
+import java.io.IOException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,28 +21,7 @@ import static org.junit.Assert.*;
  */
 public class DaateTest {
     
-    public DaateTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of Calculatedaño method, of class Daate.
-     */
+   
     @Test
     public void testCalculatedaño() throws Exception {
         System.out.println("Calculateda\u00f1o");
@@ -48,6 +30,8 @@ public class DaateTest {
         int mes = 9;
         int day = 6;
         Daate instance = new Daate();
+        
+        
         String expResult = ";1997;9;6;21";
         String result = instance.Calculatedaño(nameperson, age, mes, day);
         assertEquals(expResult, result);
@@ -59,16 +43,6 @@ public class DaateTest {
         
         System.out.println("Calculateda\u00f1o");
         nameperson = "";
-        age = -1997;
-        mes = 9;
-        day = 6;
-        expResult = ";1997;9;6;21";
-        result = instance.Calculatedaño(nameperson, age, mes, day);
-        assertEquals(expResult, result);
-        
-        
-               System.out.println("Calculateda\u00f1o");
-        nameperson = "";
         age = 1997;
         mes = 9;
         day = 6;
@@ -87,7 +61,8 @@ public class DaateTest {
         assertEquals(expResult, result);
         
         
-               System.out.println("Calculateda\u00f1o");
+        
+         System.out.println("Calculateda\u00f1o");
         nameperson = "";
         age = 1997;
         mes = 9;
@@ -118,6 +93,32 @@ public class DaateTest {
         boolean result = instance.yearbisiest(age);
         assertEquals(expResult, result);
       
+    }
+    @Test
+    public void testfloats() throws IOException{
+        Daate instance = new Daate();
+        String nameperson = "";
+        int age = 32000;
+        int mes = 9;
+        int day = 6;
+        String expResult = ";1997;9;6;21";
+        String result = instance.Calculatedaño(nameperson, age, mes, day);
+        assertEquals(expResult, result);
+        
+        
+    }
+       @Test
+    public void test2() throws IOException{
+        Daate instance = new Daate();
+        String nameperson = "";
+        int age = 2013;
+        int mes = 35;
+        int day = 6;
+        String expResult = ";1997;9;6;21";
+        String result = instance.Calculatedaño(nameperson, age, mes, day);
+        assertEquals(expResult, result);
+        
+        
     }
     
 }
