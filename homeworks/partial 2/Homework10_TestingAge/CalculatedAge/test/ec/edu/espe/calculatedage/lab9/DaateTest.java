@@ -27,7 +27,7 @@ public class DaateTest {
         System.out.println("Calculateda\u00f1o");
         String nameperson = "";
         int age = 1997;
-        int mes = 9;
+        int mes = -9;
         int day = 6;
         Daate instance = new Daate();
         
@@ -43,7 +43,7 @@ public class DaateTest {
         
         System.out.println("Calculateda\u00f1o");
         nameperson = "";
-        age = 1997;
+        age = 2038;
         mes = 9;
         day = 6;
         expResult = ";1997;9;6;21";
@@ -54,7 +54,7 @@ public class DaateTest {
                System.out.println("Calculateda\u00f1o");
         nameperson = "";
         age = 1997;
-        mes = 9;
+        mes = 32;
         day = 6;
         expResult = ";1997;9;6;21";
         result = instance.Calculatedaño(nameperson, age, mes, day);

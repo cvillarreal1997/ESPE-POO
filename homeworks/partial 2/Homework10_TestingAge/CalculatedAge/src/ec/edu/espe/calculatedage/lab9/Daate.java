@@ -6,9 +6,7 @@
 package ec.edu.espe.calculatedage.lab9;
 
 import java.io.IOException;
-import static java.lang.System.console;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
@@ -35,21 +33,21 @@ public class Daate {
         rmonth=calculo.rest(meslly, mes);
         if((yearbisiest(age)==true)&&(mes==2)&&(day==29)){
             rage=rage/4;
-            JOptionPane.showMessageDialog(null,nameperson+"  Hey tu cumples en año bisiesto por lo tanto tienes "+rage+" años ");
+            //JOptionPane.showMessageDialog(null,nameperson+"  Hey tu cumples en año bisiesto por lo tanto tienes "+rage+" años ");
             String datas=nameperson+";"+age+";"+mes+";"+day+";"+rage;
             return datas;
            
         }else{
-           JOptionPane.showMessageDialog(null, "Datos erroneos");
+           //JOptionPane.showMessageDialog(null, "Datos erroneos");
         }
         if (day<0|day>31){
-            JOptionPane.showMessageDialog(null,"Ha ingresado mal el dia");
-           Pregunta();
+            //JOptionPane.showMessageDialog(null,"Ha ingresado mal el dia");
+           //Pregunta();
            
         }
         if (mes<0|mes>12){
-            JOptionPane.showMessageDialog(null,"Ha ingresado mal el mes");
-            Pregunta();
+           // JOptionPane.showMessageDialog(null,"Ha ingresado mal el mes");
+            //Pregunta();
          
         }
         if (age<0|age>ageactually){
