@@ -6,6 +6,7 @@
 package ec.edu.espe.frameandclass.GUI;
 
 import ec.edu.espe.model.Loginstart;
+import javax.swing.JOptionPane;
 import sun.security.util.Password;
 
 /**
@@ -101,9 +102,15 @@ public class Login extends javax.swing.JFrame {
 
     private void btnenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenterActionPerformed
       user=txtusername.getText();
-        pas.enter(user,pswpassword.getText());
+      boolean check;
+        check=pas.enter(user,pswpassword.getText());
+        if(check==true){
         Frame2 ven2= new Frame2 ();
-        ven2.setVisible(true);
+        ven2.setVisible(true); 
+        }else{
+            JOptionPane.showMessageDialog(null, "Es Incorrecto  Intentelo Nuevamente");
+        }
+      
        
     }//GEN-LAST:event_btnenterActionPerformed
 
@@ -111,6 +118,8 @@ public class Login extends javax.swing.JFrame {
       user=txtusername.getText();
         
         pas.saveUser(user, pswpassword.getText());
+        
+        JOptionPane.showMessageDialog(null,"Registrado con Exito");
     }//GEN-LAST:event_btnregisterActionPerformed
 
     /**

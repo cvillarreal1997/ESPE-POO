@@ -36,7 +36,7 @@ public class Loginstart {
                   
      }
      
-     public void enter(String user, String password){
+     public boolean enter(String user, String password){
          String userecr= encriptar(user);
           String pasecr= encriptar(password);
          String chain=file.searchInFile(arch, userecr);
@@ -44,9 +44,10 @@ public class Loginstart {
          
          if ((userecr.equals(chain.split(";")[0])) && (pasecr.equals(chain.split(";")[1]))){
              JOptionPane.showMessageDialog(null,"Bienvenido");
+             return true;
              
          }else{
-             JOptionPane.showMessageDialog(null, "Usuario No Registrado");
+             return false;
          }
          
          
