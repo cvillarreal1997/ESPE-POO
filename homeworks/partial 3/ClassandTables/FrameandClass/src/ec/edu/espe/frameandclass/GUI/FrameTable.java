@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrameTable extends javax.swing.JFrame {
     String acum;
-    public DefaultTableModel model = new DefaultTableModel();
+    public static DefaultTableModel model = new DefaultTableModel();
     
    
     public void llenarttable(){
