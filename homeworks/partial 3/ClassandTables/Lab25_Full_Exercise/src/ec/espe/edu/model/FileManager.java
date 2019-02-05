@@ -35,6 +35,7 @@ public class FileManager
             }
         }
     }
+    
     /**
      * Write in a file by passing the file name as a file object and a String with the data
      * @param name
@@ -130,6 +131,21 @@ public class FileManager
             System.out.println(e.toString());
         } 
         return aux;
+    }
+     public void delete (String name)
+    {
+        File file = new File(name);
+        try
+        {
+            if(file.exists())
+            {
+                file.delete();
+            }
+
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
     }
     
     /**

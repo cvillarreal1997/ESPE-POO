@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.lab25_full_exercise;
 
+import ec.espe.edu.model.vendedor;
+
 /**
  *
  * @author Lenovo
@@ -15,7 +17,8 @@ public class Lab25_Full_Exercise {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       vendedor vend = new vendedor ();
+        System.out.println("es....."+vend.modifyTable("Producto.csv", "Erika", 5, 1,"Juan"));
     }
     
 }
